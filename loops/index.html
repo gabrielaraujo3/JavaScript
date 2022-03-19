@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <div class="js">react</div>
+    <div class="js">angular</div>
+    <div class="js">typescript</div>
+    <div class="js">es6</div>
+</body>
+
+<script>
+    
+    /*var js = document.getElementsByClassName('js');
+
+    for(let i = 0; i < js.length; i++) {
+        let texto = js[i].innerHTML;
+        js[i].innerHTML = 'curso ' + texto + ' js';
+    }*/
+
+    /*var js = document.getElementsByClassName('js');
+
+    var array = [1, 2, 'b', 4];
+
+    array.forEach(function(element, index) {
+        // console.log(element, indice)
+        if(element === 1) {
+            array[index] = "vira outra coisa"
+        }
+    })
+
+    console.log(array)*/
+
+    var js = document.getElementsByClassName('js');
+
+    var array = [1, 2, 'b', 4];
+
+    var nova = array.map(function(element, index) {
+        if(element === 1) {
+            element = 'outra coisa';
+        }
+
+        return element;
+    })
+
+    console.log(nova);
+
+</script>
+</html>
