@@ -1,5 +1,5 @@
 function meuPrograma() {
-  function preencherEstrelas() {
+  function calcularChinchilas() {
     const inChinchilas = document.getElementById('inChinchilas');
     const inAnos = document.getElementById('inAnos');
     const outResposta = document.getElementById('outResposta');
@@ -27,6 +27,6 @@ function meuPrograma() {
   }
 
   const btCalcular = document.getElementById('btCalcular');
-  btCalcular.addEventListener('click', preencherEstrelas);
+  btCalcular.addEventListener('click', calcularChinchilas);
 }
 meuPrograma();
