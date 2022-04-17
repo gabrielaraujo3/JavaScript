@@ -33,7 +33,7 @@ function meuPrograma() {
 
     let lista = '';
 
-    for (var i = 0; i < criancas.length; i++) {
+    for (let i = 0; i < criancas.length; i++) {
       lista += criancas[i].nome + ' - ' + criancas[i].idade + ' anos\n';
     }
 
