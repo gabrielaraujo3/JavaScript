@@ -12,14 +12,24 @@ ValidaCPF.prototype.valida = function() {
 
   const cpfParcial = this.cpfLimpo.slice(0, -2);
   const digito1 = this.criaDigito(cpfParcial);
-
-  return true;
+  const digito2 = this.criaDigito(cpfParcial + digito1);
+  
+  const novoCpf = cpfParcial + digito1 + digito2;
+  return novoCpf === this.cpfLimpo;
 };
 
 ValidaCPF.prototype.criaDigito = function(cpfParcial) {
   const cpfArray = Array.from(cpfParcial);
-  console.log(cpfArray);
+  let regressivo = cpfArray.length + 1;
+  const total = cpfArray.reduce((acumulador, valorAtual) => {
+    acumulador += (regressivo * Number(valorAtual));
+    regressivo--;
+    return acumulador;
+  }, 0);
+
+  const digito = 11 - (total % 11);
+  return digito > 9 ? '0' : String(digito);
 };
 
-const cpf = new ValidaCPF('705.484.450-52');
+const cpf = new ValidaCPF('705.484.451-52'); //070.987.720-03      705.484.450-52
 console.log(cpf.valida());
