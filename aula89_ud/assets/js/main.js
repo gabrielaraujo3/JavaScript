@@ -24,17 +24,20 @@ document.addEventListener('click', e => {
   }
 });
 
-function carregaPagina(el) {
+async function carregaPagina(el) {
   const href = el.getAttribute('href');
-  
+
   const objConfig = {
     method: 'GET',
     url: href,
   };
 
-  request(objConfig).then(response => {
+  try {
+    const response = await request(objConfig);
     carregaResultado(response);
-  }).catch(error => console.log(error));
+  } catch(e) {
+    console.log(e);
+  }
 }
 
 function carregaResultado(response) {
